@@ -1,17 +1,19 @@
-# Showcase Plugin
+# VCD Plugin for Cloud Partner Navigator apps
 
 ## Overview
 
-This plugin is an example how to build extension which will bootstrap one or more actions to:
+This plugin contains static links in the Applications / Services section to different SaaS solutions. It also provides example VM context menu items
+for Carbon Black
 
-- Organization VDCs
-- VMs / vApp(s)
-
+Created from Showcase-Plugin https://github.com/vmware-samples/vcd-ext-samples/tree/showcase-plugin
 ## Build
 
+NPM version 6.14.8
+Node version 10.20.0
+
 ```bash
-git clone -b showcase-plugin --single-branch https://github.com/vmware-samples/vcd-ext-samples.git
-cd vcd-ext-sdk
+git clone -b main --single-branch https://github.com/tschoergez/vcd-plugin-CPNPrototype.git
+cd vcd-ext-samples
 
 # install project dependencies
 npm ci
