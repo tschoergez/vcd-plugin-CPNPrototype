@@ -1,11 +1,14 @@
 <clr-modal [(clrModalOpen)]="opened" [clrModalClosable]="false">
-    <h3 class="modal-title">Backup Virtual Machine</h3>
+    <h3 class="modal-title">Carbon Black</h3>
     <div class="modal-body">
-        <p>{{modalText}}</p>
+        <div *ngIf="modalAction == 'urn:vmware:vcloud:vm:cbSensor'"><img style="max-width: 100%; max-height: 100%;" src="https://ose.lon5-jl.cloudhappens.io/api/v1/s3/pluginimages/CBSensorKitDownload.png" /></div>
+        <div *ngIf="modalAction == 'urn:vmware:vcloud:vm:cbEvents'" ><button type="button" class="btn"><a href="https://defense-prod05.conferdeploy.net/cb/investigate/events/events?searchWindow=THREE_DAYS&selectedFacets[device_name][0]=cloudhappens%5Ciad3-ca-jumpbox" target="_blank">Open Events in new browser tab</a></button></div>
+        <div *ngIf="modalAction == 'urn:vmware:vcloud:vm:cbStatus'"><img style="max-width: 100%; max-height: 100%;" src="https://ose.lon5-jl.cloudhappens.io/api/v1/s3/pluginimages/CBDeviceStatus.png" /></div>
+        <div *ngIf="modalAction == 'urn:vmware:vcloud:vm:cbLive'" ><button type="button" class="btn"><a href="https://defense-prod05.conferdeploy.net/live-response/75773599" target="_blank">Open Live Response in new browser tab</a></button>  </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-primary" (click)="onClose()">
-            Dismiss
+            Close
         </button>
     </div>
 </clr-modal>

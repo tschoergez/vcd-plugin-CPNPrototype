@@ -8,30 +8,44 @@ import { EntityActionExtensionComponent, EntityActionExtensionMenuEntry } from "
 })
 export class VmBackupActionComponent extends EntityActionExtensionComponent {
     modalText = "";
+    modalAction = "";
     opened = false;
 
     private result: Subject<{ refreshRequested: boolean }>;
 
     getMenuEntry(entityUrn: string): Observable<EntityActionExtensionMenuEntry> {
         return Observable.of({
-            text: "Backup",
+            text: "Carbon Black",
             children: [{
-                urn: "urn:vmware:vcloud:vm:backup",
-                text: "Backup",
+                urn: "urn:vmware:vcloud:vm:cbSensor",
+                text: "Sensor Kit Installation",
                 busy: false,
                 enabled: true
             },
             {
-                urn: "urn:vmware:vcloud:vm:deleteBackup",
-                text: "Delete Backups",
+                urn: "urn:vmware:vcloud:vm:cbStatus",
+                text: "Show Status",
                 busy: false,
-                enabled: false
+                enabled: true
+            },
+            {
+                urn: "urn:vmware:vcloud:vm:cbEvents",
+                text: "Show Events",
+                busy: false,
+                enabled: true
+            },
+            {
+                urn: "urn:vmware:vcloud:vm:cbLive",
+                text: "Go Live",
+                busy: false,
+                enabled: true
             }]
         });
     }
 
     performAction(menuItemUrn: string, entityUrn: string): Observable<{ refreshRequested: boolean }> {
         this.modalText = `Entity: ${entityUrn}  Action: ${menuItemUrn}`;
+        this.modalAction = menuItemUrn;
         this.opened = true;
         this.result = new Subject<{ refreshRequested: boolean }>();
         return this.result.asObservable();
