@@ -47,8 +47,8 @@
     }, {
         "urn": "urn:vmware:vcd:component-scope:applications",
         "type": "navigation:applications",
-        "name": "Applicaton Extenson Point (New)",
-        "description": "Display custom information in the Applicaton Tab",
+        "name": "Services",
+        "description": "Cloud Partner Navigator Services",
         "component": "ApplicationComponent"
     },
     {
