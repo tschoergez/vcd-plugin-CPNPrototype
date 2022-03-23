@@ -36,7 +36,7 @@ export class VmBackupActionComponent extends EntityActionExtensionComponent {
             },
             {
                 urn: "urn:vmware:vcloud:vm:cbLive",
-                text: "Go Live",
+                text: "Open Live Response",
                 busy: false,
                 enabled: true
             }]
